@@ -7,8 +7,10 @@ public class Test3 {
         //Pet pet = new Cat();
         ClassPathXmlApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext3.xml");
-        Pet pet = context.getBean("myPet", Pet.class);
-        Person person = new Person(pet);
+        //Pet pet = context.getBean("myPet", Pet.class);
+        Person person = context.getBean("myPerson", Person.class);
         person.callYourPet();
+
+        context.close();
     }
 }
